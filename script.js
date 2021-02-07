@@ -1,36 +1,28 @@
 'use strict';
-let lang = prompt('RU / EN ? if...else', 'ru');
+let generateOddNumber = function(num1, num2){
+    
+    let random ;
 
-if(lang === 'en'){
-    console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
-}else if(lang === 'ru'){
-    console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресение');
-}
+    if(Math.sign(Math.min(num1, num2)) === -1){
 
+        random = Math.round((Math.random() * (Math.max(num1, num2) - Math.min(num1, num2)) + Math.min(num1, num2)));
 
+    }
 
-let lang2 = prompt('RU / EN ? switch', 'ru');
-
-switch(lang2){
-    case 'ru':
-        console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресение');
-        break;
-        case 'en':
-            console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
-            break;
-        }
+    else if(Math.sign(Math.min(num1, num2)) === 1){
+ 
+        random = Math.round(Math.random() * ((Math.max(num1, num2)) - Math.min(num1, num2)) + Math.min(num1, num2));
         
+    }
 
-let lang3 = prompt('RU / EN ? array', 'ru');
+     random = random % 2 === 0 ? random - 1 : random;
 
-let langArr = ['ru',['Понедельник ', 'Вторник ', 'Среда ', 'Четверг ', 'Пятница ', 'Суббота ', 'Воскресение '],
-'en',['Monday ', 'Tuesday ', 'Wednesday ', 'Thursday ', 'Friday ', 'Saturday ', 'Sunday ']];
-let num = langArr.indexOf(lang3);
+        return random;
 
-console.log(langArr[num + 1].toString());
+        };
+
+console.log('generateOddNumber: ', generateOddNumber(-100, 100));
 
 
-let namePerson = prompt('Введите имя', 'Nemo');
 
-let result = namePerson === 'Артём' ? console.log('Директор') : 
-namePerson === 'Максим' ? console.log('Преподаватель') : console.log('Студент');;
+
