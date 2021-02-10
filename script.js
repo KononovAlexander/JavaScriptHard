@@ -1,28 +1,20 @@
 'use strict';
-let generateOddNumber = function(num1, num2){
-    
-    let random ;
 
-    if(Math.sign(Math.min(num1, num2)) === -1){
+let userStr = prompt('Введите строку!');
 
-        random = Math.round((Math.random() * (Math.max(num1, num2) - Math.min(num1, num2)) + Math.min(num1, num2)));
-
+let getString = function(string){
+while (!isNaN(string)  || string === '' || string === null){
+        string = prompt('Введите строку!');
     }
+    string = string.trim(); 
+     if(string.length > 30){
+         string = string.slice(0, 30).trim() + '...';
+         return string;
+     }else{
+         return string;
+     }
 
-    else if(Math.sign(Math.min(num1, num2)) === 1){
- 
-        random = Math.round(Math.random() * ((Math.max(num1, num2)) - Math.min(num1, num2)) + Math.min(num1, num2));
-        
-    }
+};
 
-     random = random % 2 === 0 ? random - 1 : random;
-
-        return random;
-
-        };
-
-console.log('generateOddNumber: ', generateOddNumber(-100, 100));
-
-
-
+console.log(getString(userStr));
 
