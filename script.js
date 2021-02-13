@@ -20,7 +20,7 @@ const arrSort = function(array){
              let z = i % x
             
            	if(z !== 0 ){
-           		// continue;
+           	
            		x++;
                 
            	}
@@ -30,32 +30,13 @@ const arrSort = function(array){
            		
            }else if(x === i && z ===0){
 
-             console.log(i);
+             console.log(i + '- Делители этого числа: 1 и ' + i);
              break;
            }
         
         	
         }while( x <= i);
 
-     // for(let i = 0; i <= 100; i++){
-
-
-     //   if(Number.isInteger(Math.sqrt(i))){
-     //       continue; 
-     //   }else if(i % 2 === 0){
-     //   	// for(let x = 2; x < i; x++){
-     //             continue;
-     //   		}else if(i % 3 === 0){
-
-     //             continue;
-     //   		}else if(i % 5 === 0){
-     //             continue;     
-     //   		}else if(i % 7 === 0 ){
-     //   			continue
-     //   		}else{
-     //   			console.log(i);
-     //   			continue;
-     //   		}
        };
 
      };
